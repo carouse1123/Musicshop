@@ -1,6 +1,6 @@
 <?php
-
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,11 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::prefix('admin')->middleware('auth')->group(function(){
+Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
      Route::get('/dashboard',[AdminController::class, 'index'])->name('dashboard');
 });
 
@@ -27,8 +24,11 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/', function () {
-        return view('welcome');
-    })->name('welcome');
+    Route::get('/home',[HomeController::class, 'index'])->name('home');
+    Route::get('/testt',[HomeController::class,'test'])->name('testt');
+});
 
+Route::middleware(['guest'])->group(function () {
+    Route::get('/',[HomeController::class,'index']);
+    Route::get('/test',[HomeController::class,'test'])->name('test');
 });
