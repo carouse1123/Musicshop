@@ -19,8 +19,9 @@
                         {{ __('test') }}
                     </x-jet-nav-link>
                 </div>
-                @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+            </div>
+            @if (Route::has('login'))
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex items-center">
                     @auth
                         @include('navbar')
                     @else
@@ -32,7 +33,6 @@
                     @endauth
                 </div>
             @endif
-            </div>
         </div>
     </div>
 </nav>
