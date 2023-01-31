@@ -19,14 +19,19 @@ Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
      Route::get('/dashboard',[AdminController::class, 'index'])->name('dashboard');
 });
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
+Route::middleware('auth')->group(function(){
     Route::get('/home',[HomeController::class, 'index'])->name('home');
     Route::get('/testt',[HomeController::class,'test'])->name('testt');
 });
+
+// Route::middleware([
+//     'auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified'
+// ])->group(function () {
+//     Route::get('/home',[HomeController::class, 'index'])->name('home');
+//     Route::get('/testt',[HomeController::class,'test'])->name('testt');
+// });
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/',[HomeController::class,'index']);

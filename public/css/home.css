@@ -1,0 +1,13 @@
+p {
+    padding: 20px;
+}
+
+.card {
+    display: inline-block;
+    margin: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 3px 15px;
+}
+
+.cards {
+    display: flex;
+}
