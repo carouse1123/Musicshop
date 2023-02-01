@@ -13,10 +13,10 @@ class ProductCategory extends Migration
      */
     public function up()
     {
-        Schema::create('products_category', function (Blueprint $table) {
+        Schema::create('product_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->timestamp('created_at');
+            $table->timestamps();
             $table->softDeletes();
         });
     }
@@ -28,6 +28,6 @@ class ProductCategory extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_category');
+        Schema::dropIfExists('products_category');
     }
 }

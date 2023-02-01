@@ -24,8 +24,8 @@ class Products extends Migration
             $table->timestamp('promotion_start')->nullable();
             $table->timestamp('promotion_end')->nullable();
             $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('products_category');
-            $table->timestamp('created_at')->nullable();
+            $table->foreign('category_id')->references('id')->on('product_categories');
+            $table->timestamps();
             $table->softDeletes();
         });
     }
