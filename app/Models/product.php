@@ -10,7 +10,7 @@ class product extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    public function product_category() {
+    public function product_categories() {
         return $this->belongsTo(products::class);
     }
 }
