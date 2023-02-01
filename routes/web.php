@@ -21,7 +21,7 @@ Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
 
 Route::middleware('auth')->group(function(){
     Route::get('/home',[HomeController::class, 'index'])->name('home');
-    Route::get('/testt',[HomeController::class,'test'])->name('testt');
+    Route::get('/productt',[HomeController::class,'product'])->name('productt');
 });
 
 // Route::middleware([
@@ -34,6 +34,6 @@ Route::middleware('auth')->group(function(){
 // });
 
 Route::middleware(['guest'])->group(function () {
-    Route::get('/',[HomeController::class,'index']);
-    Route::get('/test',[HomeController::class,'test'])->name('test');
+    Route::get('/',[HomeController::class,'index'])->name('home1');
+    Route::get('/product',[HomeController::class,'product'])->name('product');
 });

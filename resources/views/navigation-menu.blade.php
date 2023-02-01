@@ -12,12 +12,12 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                    <x-jet-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
+                        {{ __('หน้าแรก') }}
                     </x-jet-nav-link>
 
-                    <x-jet-nav-link href="{{ route('testt') }}" :active="request()->routeIs('testt')">
-                        {{ __('test') }}
+                    <x-jet-nav-link href="{{ route('productt') }}" :active="request()->routeIs('productt')">
+                        {{ __('เครื่องดนตรี') }}
                     </x-jet-nav-link>
 
                 </div>
