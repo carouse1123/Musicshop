@@ -2,6 +2,8 @@
 
 namespace App\Http\Middleware;
 
+namespace App\Http\Middleware;
+
 use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Http\Request;
@@ -29,4 +31,5 @@ class RedirectIfAuthenticated
 
         return $next($request);
     }
+
 }

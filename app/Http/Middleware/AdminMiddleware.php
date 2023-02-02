@@ -22,7 +22,7 @@ class AdminMiddleware
             // admin role == 1
 
             if(Auth::user()->role == '1'){
-                return redirect('/admin/dashboard');
+                return $next($request);
             }else{
                 return redirect('/home')->with('message','คุณไม่ใช่แอดมิน');
             }
