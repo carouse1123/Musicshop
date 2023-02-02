@@ -35,15 +35,7 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
 
 });
 
-// Route::middleware([
-//     'auth:sanctum',
-//     config('jetstream.auth_session'),
-//     'verified'
-// ])->group(function () {
-//     Route::get('/home',[HomeController::class, 'index'])->name('home');
-//     Route::get('/testt',[HomeController::class,'test'])->name('testt');
-// });
 
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/test', [HomeController::class, 'test'])->name('test');
+Route::get('/product', [HomeController::class, 'product'])->name('product');

@@ -16,7 +16,7 @@
                         {{ __('หน้าแรก') }}
                     </x-jet-nav-link>
 
-                    <x-jet-nav-link href="{{ route('productt') }}" :active="request()->routeIs('productt')">
+                    <x-jet-nav-link href="{{ route('product') }}" :active="request()->routeIs('product')">
                         {{ __('เครื่องดนตรี') }}
                     </x-jet-nav-link>
 
