@@ -17,4 +17,8 @@ class HomeController extends Controller
         $product = product::all();
         return view('product',compact('product'));
     }
+    function productdetail($id){
+        $product = product::find($id);
+        return view('productdetail',compact('product'));
+    }
 };
