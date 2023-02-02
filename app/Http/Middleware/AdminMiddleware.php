@@ -17,19 +17,18 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::check()){
+        if (Auth::check()) {
 
             // admin role == 1
 
-            if(Auth::user()->role == '1'){
+            if (Auth::user()->role == '1'){
                 return $next($request);
-            }else{
-                return redirect('/home')->with('message','คุณไม่ใช่แอดมิน');
+            } else {
+                return redirect('/home')->with('message', 'คุณไม่ใช่แอดมิน');
             }
-        
-    }else{
-        return redirect('/login')->with('message','เข้าสู่ระบบเพื่อดูรายละเอียด');
-    }
+        } else {
+            return redirect('/login')->with('message', 'เข้าสู่ระบบเพื่อดูรายละเอียด');
+        }
         return $next($request);
     }
 }

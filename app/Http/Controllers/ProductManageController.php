@@ -34,5 +34,11 @@ class ProductManageController extends Controller
         $product->save();
         return redirect()->back()->with('status','เพิ่มให้ละ');
     }
+
+    function CategoryManage(){
+        $product = product::all();
+        $categories = product_categories::all();
+        return view('admin/categorymanagement',compact('product','categories'));
+    }
     
 }
