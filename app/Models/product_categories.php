@@ -11,6 +11,6 @@ class product_categories extends Model
     use HasFactory;
     use SoftDeletes;
     public function product() {
-        return $this->hasMany(product_categoeies::class,'product_id');
+        return $this->hasMany(product::class);
     }
 }
