@@ -1,0 +1,53 @@
+.nameproduct {
+    padding: 20px;
+}
+
+.priceproduct{
+    padding-left:20px ;
+    bottom: 0;
+}
+
+.row{
+    margin: 0;
+    padding: 0;
+}
+img{
+    border-radius: 15px;
+}
+.topseller {
+    width: 20rem;
+    height: 20rem;
+    object-fit: cover;
+}
+
+.all{
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+.arrow{
+    padding: 5px;
+}
+
+.card {
+    width: 20rem;
+    background-color: white;
+    border-radius: 15px;
+    display: inline-block;
+    margin: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 3px 15px;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.2s;
+}
+.newcomer{
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+.cards {
+    margin-top: 1rem;
+    display: flex;
+}

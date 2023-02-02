@@ -13,7 +13,8 @@ class HomeController extends Controller
         $product = product::all();
         return view('home',compact('product'));
     }
-    function test(){
-        return view('testt');
+    function product(){
+        $product = product::all();
+        return view('product',compact('product'));
     }
 };
