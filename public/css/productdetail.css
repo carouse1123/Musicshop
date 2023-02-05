@@ -6,14 +6,22 @@ img {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 3px 15px;
 }
 
-.btnsell {
+#btnsell {
     padding: 20px 40px 20px 40px;
     background-color: #FFBB54;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #FFBB54;
     border-radius: 15px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 3px 15px;
 }
 
-.btnchat {
+#btnsell:hover {
+    color: white;
+    transition: 0.2s;
+}
+
+#btnchat {
     padding: 20px 40px 20px 40px;
     border-width: 2px;
     border-style: solid;
@@ -21,29 +29,40 @@ img {
     border-radius: 15px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 3px 15px;
 }
-.price{
+
+#btnchat:hover {
+    background-color: #FFBB54;
+    transition: 0.2s;
+}
+
+#price {
     margin: 2% 0 2% 0;
     font-size: 25px;
     font-weight: bold;
 }
-.btn{
+
+.btn {
     margin-top: 5%;
 }
-.productname{
+
+#productname {
     font-size: 30px;
     font-weight: bold;
 }
-hr{
+
+hr {
     margin: 2% 0 2% 0;
 }
-.detail{
+
+#detail {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
-.container{
+
+.container {
     margin-top: 2%;
     display: flex;
     flex-wrap: nowrap;
@@ -51,7 +70,61 @@ hr{
     justify-content: center;
     align-items: flex-start;
 }
-.btnsell:hover {
-    transform: scale(1.02);
-    transition: 0.2s;
+
+#categories {
+    margin: 2% 0 2% 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#productdetail {
+    margin: 15px auto;
+    width: 100%;
+    height: auto;
+    
+}
+
+#btnswap {
+    display: flex;
+}
+
+button {
+    padding: 20px 30px 20px 30px;
+    background: white;
+}
+
+button:hover {
+    border: none;
+    background-color: #FFBB54;
+    border-radius: 15px 15px 0 0;
+}
+
+#blocks {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+#prodetail {
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border-radius: 0 15px 15px 15px;
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 2%;
+    background-color: #FFBB54;
+}
+
+#comment {
+    display: none;
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
+#btndetail{
+    background-color: #FFBB54;
+    border-radius: 15px 15px 0 0;
+}
+#btncomment{
+    border-radius: 15px 15px 0 0;
 }
