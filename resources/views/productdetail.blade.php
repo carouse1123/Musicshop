@@ -9,7 +9,7 @@
                     <div class="row">
                         <h4 id="productname">{{$product->product_name}}</h4>
                         <hr style="border: 1px solid #FFBB54;">
-                        <p id="categories">{{$product->product_categories->name}}</p>
+                        <p id="categories">{{$category->name}}</p>
                         <p id="detail">{{$product->product_detail}}</p>
                         <p id="price">&#x0E3F;{{number_format($product->product_price, 2)}}</p>
                     </div>
