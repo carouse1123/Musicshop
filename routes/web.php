@@ -40,3 +40,4 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/product', [HomeController::class, 'product'])->name('product');
 Route::get('/productdetail/{id}',[HomeController::class, 'productdetail'])->name('productdetail');
+Route::get('/category/{name}',[HomeController::class, 'category'])->name('category');

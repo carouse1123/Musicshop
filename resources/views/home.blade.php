@@ -2,7 +2,7 @@
     @include('navigation')
     <link href="/css/home.css" rel="stylesheet">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="newcomer">มาใหม่</h1>
+        <h1 class="title">มาใหม่</h1>
         <div class="cards">
 
             @php
@@ -38,6 +38,17 @@
 
             </div>
 
+        </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="title">หมวดหมู่</h1>
+        <div id="categories">
+        @foreach($category as $category)
+        <a href="{{URL('category/'.$category->id)}}" style="width: 18rem;" id="category">
+            <img src="{{URL('images/test.jpg')}}" class="card-img-top" alt="..." id="img">
+            <h5 class="card-title">{{$category->name}}</h5>
+        </a>
+        @endforeach
         </div>
     </div>
 </x-guest-layout>
