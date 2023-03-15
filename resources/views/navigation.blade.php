@@ -18,6 +18,14 @@
                     <x-jet-nav-link href="{{ route('product') }}" :active="request()->routeIs('product')">
                         {{ __('เครื่องดนตรี') }}
                     </x-jet-nav-link>
+
+                    <x-jet-nav-link href="" :active="request()->routeIs('')">
+                        {{ __('จำลองคีย์บอร์ด') }}
+                    </x-jet-nav-link>
+
+                    <x-jet-nav-link href="" :active="request()->routeIs('')">
+                        {{ __('รายการโปรด') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
             @if (Route::has('login'))

@@ -30,4 +30,44 @@ class HomeController extends Controller
         $category = product_categories::find($id);
         return view('category',compact('product','category'));
     }
+    function cart(){
+        return view('cart');
+    }
+    function addTocart(product $product){
+        $cart = session()->get('cart');
+        
+        if(!$cart){
+            $cart= [
+                $product->id=>[
+                    'name' => $product->product_name,
+                    'quantity' => 1,
+                    'price' => $product->product_price
+                ]
+            ];
+            session()->put('cart',$cart);
+            return redirect()->route('cart')->with('success',"เพิ่มสินค้าเรียบร้อย");
+        }
+
+        if(isset($cart[$product->id])){
+            $cart[$product->id]['quantity']++;
+            session()->put('cart', $cart);
+            return redirect()->route('cart')->with('success',"เพิ่มสินค้าเรียบร้อย");
+        }
+        $cart[$product->id] = [
+            'name' => $product->product_name,
+            'quantity' => 1,
+            'price' => $product->product_price
+        ];
+        session()->put('cart',$cart);
+        return redirect()->route('cart')->with('success',"เพิ่มสินค้าเรียบร้อย");
+    }
+    function removecart($id){
+        $cart = session()->get('cart');
+
+        if(isset($cart[$id])){
+            unset($cart[$id]);
+            session()->put('cart', $cart);
+        }
+        return redirect()->back()->with('success',"ลบสินค้าเรียบร้อย");
+    }
 };

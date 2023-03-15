@@ -19,6 +19,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/cart',[HomeController::class, 'cart'])->name('cart');
+    Route::get('/add-to-cart/{product}',[HomeController::class, 'addTocart'])->name('addcart');
+    Route::get('/remove/{id}',[HomeController::class, 'removecart'])->name('removecart');
 });
 
 Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {

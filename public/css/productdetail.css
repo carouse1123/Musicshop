@@ -5,6 +5,9 @@
     border-radius: 15px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 3px 15px;
 }
+#increment-btn, #decrement-btn, #qty-input{
+    font-size: 25px;
+}
 
 #btnsell {
     padding: 20px 40px 20px 40px;
@@ -88,12 +91,12 @@ hr {
     display: flex;
 }
 
-button {
+.btnswitch {
     padding: 20px 30px 20px 30px;
     background: white;
 }
 
-button:hover {
+.btnswitch:hover {
     border: none;
     background-color: #FFBB54;
     border-radius: 15px 15px 0 0;

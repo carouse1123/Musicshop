@@ -1,4 +1,5 @@
 <x-guest-layout>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     @include('navigation')
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <link href="/css/productdetail.css" rel="stylesheet">
@@ -13,8 +14,15 @@
                         <p id="detail">{{$product->product_detail}}</p>
                         <p id="price">&#x0E3F;{{number_format($product->product_price, 2)}}</p>
                     </div>
+                    <div class="row">
+                        <div class="input-group">
+                        <i class='bx bx-minus-circle input-group-text decrement-btn'  id="decrement-btn"></i>
+                        <input type="" name="quantity " class="form-control text-center qty-input" value="1" id="qty-input" disabled>
+                        <i class='bx bx-plus-circle increment-btn input-group-text' id="increment-btn"></i>
+                        </div>
+                    </div>
                     <div class="row btn">
-                        <a href="" id="btnsell">ซื้อเลย</a>
+                        <a href="{{route('addcart',[$product->id])}}" id="btnsell" >เพิ่มสินค้าลงในตะกร้า</a>
                         <a href="" id="btnchat">ติดต่อร้าน</a>
                     </div>
                 </blockquote>
@@ -22,8 +30,8 @@
         </div>
         <div id="productdetail">
             <div id="btnswap">
-                <button id="btndetail">รายละเอียด</button>
-                <button id="btncomment">แสดงความคิดเห็น</button>
+                <button id="btndetail" class="btnswitch">รายละเอียด</button>
+                <button id="btncomment" class="btnswitch">แสดงความคิดเห็น</button>
             </div>
             <div id="blocks">
                 <div id="prodetail">
@@ -50,6 +58,20 @@
             comment.style.display='block';
             btn_comment.style.backgroundColor='#FFBB54';
             btn_detail.style.backgroundColor='white';
+        });
+        $(document).ready(function(){
+            $('.increment-btn').click(function (e){
+                e.preventDefault();
+
+                var inc_value = $('.qty-input').val();
+                var value = parseInt(inc_value, 10);
+                value = isNaN(value) ? 0 : value;
+                if(value < 10)
+                {
+                    value++;
+                    $('.qty-input').val(value); 
+                }
+            });
         });
     </script>
 </x-guest-layout>
