@@ -17,7 +17,8 @@ class HomeController extends Controller
     }
     function product(){
         $product = product::all();
-        return view('product',compact('product'));
+        $sidebarcate = product_categories::all();
+        return view('product',compact('product','sidebarcate'));
     }
     function productdetail($id){
         $product = product::find($id);
@@ -26,9 +27,10 @@ class HomeController extends Controller
     }
 
     function category($id){
+        $sidebarcate = product_categories::all();
         $product = product::where('category_id',$id)->get();
         $category = product_categories::find($id);
-        return view('category',compact('product','category'));
+        return view('category',compact('product','category','sidebarcate'));
     }
     function cart(){
         return view('cart');

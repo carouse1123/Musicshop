@@ -1,6 +1,6 @@
 <x-guest-layout>
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    @include('navigation')
+    @include('menu/navigation')
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <link href="/css/productdetail.css" rel="stylesheet">
         <div class="container">

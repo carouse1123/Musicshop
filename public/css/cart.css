@@ -2,8 +2,11 @@
     font-size: 2rem;
     margin-top: 1rem;
 }
-#productcart {
+#productc{
     width: 100%;
+    margin-right: 10px;   
+}
+#productcart {
     height: 120px;
     background-color: white;
     border-radius: 15px;
@@ -13,7 +16,7 @@
     
 }
 #cartsubmit{
-    width: 23.2%;
+    width: 10%;
     background-color: white;
     border-radius: 15px;
     padding: 20px;
@@ -21,6 +24,10 @@
     box-shadow: rgba(149, 157, 165, 0.2) 0px 3px 15px;
     display: flex;
     flex-direction: column;
+}
+#cartsum{
+    display: flex;
+    justify-content: space-between;
 }
 .card-text{
     margin-top: 10px;
@@ -49,10 +56,7 @@
 .card-title{
     font-weight: bold;
 }
-.row{
-    display: flex;
-    justify-content: space-between;
-}
+
 img {
     border-radius: 15px;
 }

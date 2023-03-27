@@ -6,7 +6,9 @@
     padding-left: 20px;
     bottom: 0;
 }
-
+#product{
+    margin-left: 10rem;
+}
 .row {
     margin: 0;
     padding: 0;
