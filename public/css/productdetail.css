@@ -1,9 +1,10 @@
 #imageproduct {
-    width: 30%;
-    height: 40%;
+    width: 40%;
+    height: 400px;
     margin-right: 3%;
-    border-radius: 15px;
+    border-radius: 5px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 3px 15px;
+    object-fit: cover;
 }
 #increment-btn, #decrement-btn, #qty-input{
     font-size: 25px;
@@ -15,7 +16,7 @@
     border-width: 2px;
     border-style: solid;
     border-color: #FFBB54;
-    border-radius: 15px;
+    border-radius: 5px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 3px 15px;
 }
 
@@ -29,7 +30,7 @@
     border-width: 2px;
     border-style: solid;
     border-color: #FFBB54;
-    border-radius: 15px;
+    border-radius: 5px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 3px 15px;
 }
 
@@ -49,6 +50,7 @@
 }
 
 #productname {
+    text-transform: uppercase;
     font-size: 30px;
     font-weight: bold;
 }
@@ -126,8 +128,8 @@ hr {
 }
 #btndetail{
     background-color: #FFBB54;
-    border-radius: 15px 15px 0 0;
+    border-radius: 5px 5px 0 0;
 }
 #btncomment{
-    border-radius: 15px 15px 0 0;
+    border-radius: 5px 5px 0 0;
 }

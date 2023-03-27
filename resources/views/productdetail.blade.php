@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="row btn">
-                        <a href="{{route('addcart',[$product->id])}}" id="btnsell">เพิ่มสินค้าลงในตะกร้า</a>
+                        <a href="" id="btnsell">เพิ่มสินค้าลงในตะกร้า</a>
                         <a href="" id="btnchat">ติดต่อร้าน</a>
                     </div>
                 </blockquote>

@@ -14,20 +14,31 @@
             <div class="row ">
                 @break
                 @endif
-                <a class="card" href="{{URL('productdetail/'.$product->id)}}">
-                    <img src="{{ asset('images_product/'.$product->product_image->first()->name) }}"
-                        alt="{{$product->product_image->first()->name}}" class="card-img-top" id="imgproduct">
-                    <div class="card-body">
-                        <h3 class="card-text nameproduct">{{$product->product_name}}</h3>
-                        <p class="card-text priceproduct">&#x0E3F;{{number_format($product->product_price, 2)}}</p>
+                <a href="{{URL('productdetail/'.$product->id)}}" id="card">
+                    <div class="product-card">
+                        <div class="product-tumb">
+                            <img src="{{ asset('images_product/'.$product->product_image->first()->name) }}"
+                                alt="{{$product->product_image->first()->name}}" class="card-img-top" id="imgproduct">
+                        </div>
+                        <div class="product-details">
+                            <h4 id="name">{{$product->product_name}}</h4>
+                            <div class="product-bottom-details">
+                                <div class="product-price">&#x0E3F;{{number_format($product->product_price, 2)}}
+                                </div>
+                                <div class="product-links">
+                                    <a href="" id="whislist"><i class="fa fa-heart"></i></a>
+                                    <a href="" id="cart"><i class="fa fa-shopping-cart"></i></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </a>
                 @php
                 $counter++;
                 @endphp
                 @endforeach
-                <a class="card " href="">
-                    <img src="{{URL('images/test.jpg')}}" class="topseller card-img-top" alt="topseller">
+                <a class="card " href="" id="cardss">
+                    <img src="{{URL('images/test.jpg')}}" class="topseller card-img-top" alt="topseller" id="imgrec">
                 </a>
                 <a href="{{ route('product') }}">
                     <div class="allproduct">
