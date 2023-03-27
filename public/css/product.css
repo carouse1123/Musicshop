@@ -14,10 +14,10 @@ a
     text-decoration: none;
 }
 .product-card {
-    width: 23.5%;
+    width: 29.5%;
     position: relative;
     box-shadow: 0 2px 7px #dfdfdf;
-    margin: 50px ;
+    margin: 20px ;
     background: #fafafa;
 }
 
