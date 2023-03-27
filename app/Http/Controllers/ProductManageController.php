@@ -22,10 +22,10 @@ class ProductManageController extends Controller
         return view('admin/productmanagement_add',compact('product','category'));
     }
     function Product_add (Request $request){
-        $this->validate($request, [
-            'filename' => 'required',
-            'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-        ]);
+        // $this->validate($request, [
+        //     'filename' => 'required',
+        //     'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        // ]);
         //เพิ่มสินค้า
         $product = new product;
         $product->product_name = $request->input('product_name');
@@ -44,21 +44,18 @@ class ProductManageController extends Controller
         //เพิ่มรูปสินค้า
         
         if($request->hasFile('filename')){
-
             $uploadPath = public_path('images_product');
-            foreach($request->file('filename') as $file){
-                $extention = $file->getClientOriginalExtension(); 
-                $filename = time().'.'.$extention;
-                $file->move($uploadPath,$filename);
-                $finalImagePathName = $uploadPath.'/'.$filename;
+            $file = $request->file('filename');
+            $extention = $file->getClientOriginalExtension(); 
+            $filename = time().'.'.$extention;
+            $file->move($uploadPath,$filename);
+            $finalImagePathName = $uploadPath.'/'.$filename;
 
-               
-                $image_product = new product_image;
-                $image_product->product_id = $product->id;
-                $image_product->name = $filename;
-                $image_product->path = $finalImagePathName;
-                $image_product->save();
-            }
+            $image_product = new product_image;
+            $image_product->product_id = $product->id;
+            $image_product->name = $filename;
+            $image_product->path = $finalImagePathName;
+            $image_product->save();
         }
         return redirect()->back()->with('status','เพิ่มให้ละ');  
     }
