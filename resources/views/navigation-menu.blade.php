@@ -1,12 +1,17 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
-    <!-- Primary Navigation Menu -->
+<link href="/css/navbar.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<!-- Primary Navigation Menu -->
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-jet-application-mark class="block h-9 w-auto" />
+                    <img src="{{URL('images/logo.png')}}" alt="" style="width: 60px;">
                     </a>
                 </div>
 
@@ -20,6 +25,13 @@
                         {{ __('เครื่องดนตรี') }}
                     </x-jet-nav-link>
 
+                    <x-jet-nav-link href="" :active="request()->routeIs('')">
+                        {{ __('จำลองคีย์บอร์ด') }}
+                    </x-jet-nav-link>
+
+                    <x-jet-nav-link href="" :active="request()->routeIs('')">
+                        {{ __('รายการโปรด') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
 
@@ -73,7 +85,22 @@
                     </x-jet-dropdown>
                 </div>
                 @endif
-
+                 <!-- search -->
+                 <div class="ml-3 relative">
+                    <span class="inline-flex rounded-md" width="48"> 
+                        <button type="button" class="inline-flex items-center">
+                            <i class='bx bx-search' ></i>
+                        </button>
+                    </span>
+                </div>
+                  <!-- cart -->
+                  <div class="ml-3 relative">
+                    <span class="inline-flex rounded-md" width="48"> 
+                        <button type="button" class="inline-flex items-center">
+                            <a class='bx bx-cart-alt' href="{{ route('cart') }}"></a>
+                        </button>
+                    </span>
+                </div>
                 <!-- Settings Dropdown -->
                 <div class="ml-3 relative">
                     <x-jet-dropdown align="right" width="48">
@@ -84,12 +111,9 @@
                             </button>
                             @else
                             <span class="inline-flex rounded-md">
-                                <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition">
-                                    {{ Auth::user()->name }}
-
-                                    <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                    </svg>
+                                <button type="button" class="inline-flex items-center ">
+                                    <i class='bx bx-user'></i>
+                                    
                                 </button>
                             </span>
                             @endif

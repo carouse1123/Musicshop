@@ -1,0 +1,24 @@
+#sidebar{
+    margin-top:1rem ;
+    position: fixed;
+}
+#title{
+    font-weight: bold;
+    font-size: 20px;
+}
+#border{
+    margin-top:0.5rem ;
+    border-color: #FFBB54;
+    border-style: solid;
+    border-width: 1px;
+}
+#choose{
+    margin-top:0.5rem ;
+    color: #767676;
+}
+#categorybtn:hover{
+    color: black;
+}
+#categorybtn.active{
+    color: black;
+}
