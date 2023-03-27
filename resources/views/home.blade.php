@@ -15,7 +15,7 @@
                 @break
                 @endif
                 <a class="card" href="{{URL('productdetail/'.$product->id)}}">
-                    <img src="{{URL('images/SAGA_SF850_2.jpg')}}" class="card-img-top" alt="SAGA SF850">
+                    <img src="{{ asset('images_product/'.$product->product_image->first()->name) }}" alt="{{$product->product_image->first()->name}}" class="card-img-top" >
                     <div class="card-body">
                         <h3 class="card-text nameproduct">{{$product->product_name}}</h3>
                         <p class="card-text priceproduct">&#x0E3F;{{number_format($product->product_price, 2)}}</p>
