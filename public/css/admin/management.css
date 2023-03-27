@@ -1,0 +1,61 @@
+#head{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+.bx ,#addtitle{
+    font-size: 30px;
+}
+#addtitle{
+    margin-left: 10px;
+}
+.bx:hover{
+    color: black;
+}
+#table{
+    margin-left: 20px;
+}
+#btn{
+    display: flex;
+    justify-content: flex-end
+}
+#addbtn{
+    padding: 10px;
+    background-color: #B6E2A1;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+#img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+thead {
+    background-color: white;
+    font-weight: bold;
+}
+th ,td{
+    text-align: center;
+    padding: 10px;
+}
+table{
+    border-collapse: collapse;  
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+table #row:nth-child(odd){
+    background-color: #FFD79A;
+
+}
+table #row:nth-child(even){
+    background-color: white;
+
+}
+#btndel{
+    padding: 10px;
+    background-color: #FF8787;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
