@@ -25,10 +25,12 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php $count = 0 ?>
                     @foreach ($product as $product)
+                    <?php $count = $count + 1 ?>
                     <tr>
-                        <th scope="row">----</th>
-                        <td>----</td>
+                        <th scope="row"><?php echo $count ?></th>
+                        <td><img src="{{ asset('images_product/'.$product->product_image->first()->name) }}" alt="{{$product->product_image->first()->name}}" width="150px"></td>
                         <td>{{$product->id}}</td>
                         <td>{{$product->product_name}}</td>
                         <td>{{$product->product_stock}}</td>
