@@ -33,7 +33,7 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
     Route::post('/addproduct', [ProductManageController::class, 'Product_add'])->name('product_add');
     Route::get('/editproduct/{id}', [ProductManageController::class, 'ProductManage_edit']);
     Route::put('/updateproduct/{id}', [ProductManageController::class, 'ProductManage_update']);
-    // Route::get('/deleteproduct/{id}', [ProductManageController::class, 'ProductManage_delete']);
+    Route::get('/deleteproduct/{id}', [ProductManageController::class, 'ProductManage_delete']);
 
     /*จัดการหมวดหมู่*/
     Route::get('/categorymanage', [ProductManageController::class, 'CategoryManage'])->name('categorymanage');
