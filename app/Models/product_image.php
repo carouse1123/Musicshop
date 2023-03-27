@@ -4,14 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use Products;
 
-class product_categories extends Model
+class product_image extends Model
 {
     use HasFactory;
-    use SoftDeletes;
+    protected $fillable = ['product_id', 'name', 'path'];
     public function product() {
-        return $this->hasMany(product::class);
+        return $this->belongsTo(product::class,'product_id');
     }
-
 }

@@ -5,7 +5,7 @@
     <div class="container">
         <img src="{{URL('images/SAGA_SF850_2.jpg')}}" class="card-img-top" alt="SAGA SF850">
         <h1>{{$product->product_name}}</h1>
-        <h1>{{$product->product_categories->id}}</h1>
+        <h1>{{$category->id}}</h1>
         
     </div>
     </div>
