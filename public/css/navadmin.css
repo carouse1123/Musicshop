@@ -1,5 +1,5 @@
 #sidebar{
-    position: relative;
+    position: fixed;
     top: 0;
     left: 0;
     padding: 10px 14px;
@@ -43,6 +43,7 @@
 }
 #sidebar li a:hover{
     background-color: #FFBB54;
+    color: #000;
 }
 
 #sidebar #menu-bar{

@@ -21,7 +21,7 @@
             <div id="menu">
                 <ul id="menu-links">
                     <li id="nav-link">
-                        <a href="#">
+                        <a href="{{route('dashboard')}}">
                             <i class='bx bxs-dashboard' id="icon"></i>
                             <span id="text nav-text">แดชบอร์ด</span>
                         </a>

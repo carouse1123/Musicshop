@@ -2,6 +2,8 @@
 <body class="font-sans antialiased">
     <div class="admin">
         <div>@include('menu/navadmin')</div>
+        <div id="space">
+        </div>
         <div>
             <a href="{{route('dashboard')}}">กลับ</a>
             <a href="{{route('productmanage_add')}}">เพิ่มสินค้า</a>

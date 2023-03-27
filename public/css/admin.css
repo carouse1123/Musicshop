@@ -1,3 +1,14 @@
 .admin {
     display: flex;
 }
+#manage_border{
+    margin: 20px;
+    background-color: #fff;
+    width: 100%;
+}
+#space{
+    position: relative;
+    width: 270px;
+    height: 100vh;
+    z-index: -100000000;
+}
