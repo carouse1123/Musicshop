@@ -2,16 +2,28 @@
     @include('menu/navigation')
     <link href="/css/product.css" rel="stylesheet">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div id="category">@include('menu/sidebarcategory')</div>
+        <div id="category">@include('menu/sidebarcategory')</div>
         <div id="product">
             <h1 class="title">{{$category->name}}</h1>
             <div class="row ">
                 @foreach($product as $product)
-                <a class="card col" href="{{URL('productdetail/'.$product->id)}}">
-                    <img src="{{URL('images/SAGA_SF850_2.jpg')}}" class="card-img-top" alt="SAGA SF850">
-                    <div class="card-body">
-                        <h3 class="card-text nameproduct">{{$product->product_name}}</h3>
-                        <p class="card-text priceproduct">&#x0E3F;{{number_format($product->product_price, 2)}}</p>
+                <a href="{{URL('productdetail/'.$product->id)}}" id="card">
+                    <div class="product-card">
+                        <div class="product-tumb">
+                            <img src="{{ asset('images_product/'.$product->product_image->first()->name) }}"
+                                alt="{{$product->product_image->first()->name}}" class="card-img-top" id="imgproduct">
+                        </div>
+                        <div class="product-details">
+                            <h4 id="name">{{$product->product_name}}</h4>
+                            <div class="product-bottom-details">
+                                <div class="product-price">&#x0E3F;{{number_format($product->product_price, 2)}}
+                                </div>
+                                <div class="product-links">
+                                    <a href="" id="whislist"><i class="fa fa-heart"></i></a>
+                                    <a href="" id="cart"><i class="fa fa-shopping-cart"></i></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </a>
                 @endforeach
@@ -20,5 +32,5 @@
 
         </div>
     </div>
-    
+
 </x-guest-layout>

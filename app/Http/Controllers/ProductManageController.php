@@ -58,7 +58,7 @@ class ProductManageController extends Controller
             $image_product->path = $finalImagePathName;
             $image_product->save();
         }
-        return redirect()->back()->with('status','เพิ่มให้ละ');  
+        return redirect()->back()->with('status','เพิ่มข้อมูลเสร็จสิ้น');  
     }
 
     function ProductManage_edit($id){

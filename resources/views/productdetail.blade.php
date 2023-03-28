@@ -4,8 +4,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <link href="/css/productdetail.css" rel="stylesheet">
         <div class="container">
-            <img src="{{ asset('images_product/'.$product->product_image->first()->name) }}" alt="{{$product->product_image->first()->name}}" class="card-img-top" id="imageproduct">
-
+            <img src="{{URL('images/SAGA_SF850_2.jpg')}}" class="card-img-top" id="imageproduct" alt="SAGA SF850">
             <figure class="des2">
                 <blockquote class="blockquote">
                     <div class="row">
@@ -23,58 +22,47 @@
                         </div>
                     </div>
                     <div class="row btn">
-                        <form action="{{route('cartstore')}}" method="post" enctype="multipart/form-data">
-                            {{ csrf_field() }}
-                            <input type="hidden" name="product_id" value="{{$product->id}}">
-                            <button id="btnsell">เพิ่มสินค้าลงในตะกร้า</button>
-                            
-                            <a href="" id="btnchat">ติดต่อร้าน</a>
-                        </form>
+                        <a href="{{route('addcart',[$product->id])}}" id="btnsell" >เพิ่มสินค้าลงในตะกร้า</a>
+                        <a href="" id="btnchat">ติดต่อร้าน</a>
                     </div>
-                </blockquote>
-            </figure>
-        </div>
-        <div id="productdetail">
-            <div id="btnswap">
-                <button id="btndetail" class="btnswitch">รายละเอียด</button>
-                <button id="btncomment" class="btnswitch">แสดงความคิดเห็น</button>
-            </div>
-            <div id="blocks">
-                <div id="prodetail">
-                    <p>{{$product->product_detail}}</p>
+
                 </div>
-                <div id="comment"></div>
             </div>
-        </div>
-    </div>
+            <div class="container" id="maxdetail">
+                <div id="title">
+                    <h3>รายละเอียดสินค้า</h3>
+                </div>
+                <p id="basedetail">{{$product->product_detail}}</p>
+            </div>
 
     <script>
         var btn_detail = document.getElementById("btndetail");
         var btn_comment = document.getElementById("btncomment");
         var prodetail = document.getElementById("prodetail");
         var comment = document.getElementById("comment");
-        btn_detail.addEventListener('click', () => {
-            prodetail.style.display = 'block';
-            comment.style.display = 'none';
-            btn_detail.style.backgroundColor = '#FFBB54';
-            btn_comment.style.backgroundColor = 'white';
+        btn_detail.addEventListener('click',()=>{
+            prodetail.style.display='block';
+            comment.style.display='none';
+            btn_detail.style.backgroundColor='#FFBB54';
+            btn_comment.style.backgroundColor='white';
         });
-        btn_comment.addEventListener('click', () => {
-            prodetail.style.display = 'none';
-            comment.style.display = 'block';
-            btn_comment.style.backgroundColor = '#FFBB54';
-            btn_detail.style.backgroundColor = 'white';
+        btn_comment.addEventListener('click',()=>{
+            prodetail.style.display='none';
+            comment.style.display='block';
+            btn_comment.style.backgroundColor='#FFBB54';
+            btn_detail.style.backgroundColor='white';
         });
-        $(document).ready(function() {
-            $('.increment-btn').click(function(e) {
+        $(document).ready(function(){
+            $('.increment-btn').click(function (e){
                 e.preventDefault();
 
                 var inc_value = $('.qty-input').val();
                 var value = parseInt(inc_value, 10);
                 value = isNaN(value) ? 0 : value;
-                if (value < 10) {
+                if(value < 10)
+                {
                     value++;
-                    $('.qty-input').val(value);
+                    $('.qty-input').val(value); 
                 }
             });
         });

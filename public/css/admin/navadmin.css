@@ -45,6 +45,10 @@
     background-color: #FFBB54;
     color: #000;
 }
+#sidebar li a.active{
+    background-color: #FFBB54;
+    color: #000;
+}
 
 #sidebar #menu-bar{
     height: 80%;
