@@ -6,6 +6,7 @@ use App\Models\product;
 use App\Models\product_categories;
 use App\Models\product_image;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Carbon\Carbon;
 
 class ProductManageController extends Controller
@@ -79,8 +80,28 @@ class ProductManageController extends Controller
         $product->promotion_end = $request->input('promotion_end');
         $product->promotion_start = $request->input('promotion_start');
         $product->category_id = $request->input('category_id');
-
         $product->update();
+
+        //แก้ไขรูป
+        if ($request->hasFile('filename')) {
+            $destination = 'images_product/' . $product->product_image->first()->name;
+            if (File::exists($destination)){
+                File::delete($destination);
+            }
+            $uploadPath = public_path('images_product');
+            $file = $request->file('filename');
+            $extention = $file->getClientOriginalExtension(); 
+            $filename = time().'.'.$extention;
+            $file->move($uploadPath,$filename);
+            $finalImagePathName = $uploadPath.'/'.$filename;
+
+            $image_product = product_image::find($product->product_image->first()->id);
+            $image_product->product_id = $product->id;
+            $image_product->name = $filename;
+            $image_product->path = $finalImagePathName;
+            $image_product->update();
+        }
+
 
         return redirect()->back()->with('status','แก้ไขให้ละ');  
     }

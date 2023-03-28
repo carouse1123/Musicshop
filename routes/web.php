@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductManageController;
 use App\Models\product;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+    //ตะกร้าสินค้า
+    Route::get('/cart', [CartController::class, 'cart'])->name('cart');
+    Route::post('/cartstore', [CartController::class, 'store'])->name('cartstore');
 });
 
 Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {
