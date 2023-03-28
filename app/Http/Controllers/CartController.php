@@ -57,4 +57,8 @@ class CartController extends Controller
         }
         return redirect()->back();
     }
+    function delete_cart($id){
+        $order_detail = order_detail::destroy($id);
+        return redirect()->back();
+    }
 }

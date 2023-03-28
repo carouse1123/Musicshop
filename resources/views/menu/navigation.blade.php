@@ -1,5 +1,5 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
-<link href="/css/navbar.css" rel="stylesheet">
+    <link href="/css/navbar.css" rel="stylesheet">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -7,7 +7,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                    <img src="{{URL('images/logo.png')}}" alt="" style="width: 60px;">
+                        <img src="{{URL('images/logo.png')}}" alt="" style="width: 60px;">
                     </a>
                 </div>
 
@@ -21,7 +21,7 @@
                     </x-jet-nav-link>
 
                     <x-jet-nav-link href="" :active="request()->routeIs('')" id="navlink">
-                        {{ __('จำลองคีย์บอร์ด') }}
+                        {{ __('จำลองเครื่องดนตรี') }}
                     </x-jet-nav-link>
 
                     <x-jet-nav-link href="" :active="request()->routeIs('')" id="navlink">
@@ -30,17 +30,18 @@
                 </div>
             </div>
             @if (Route::has('login'))
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex items-center">
-                    @auth
-                        @include('menu/navbar')
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex items-center">
+                @auth
+                @include('menu/navbar')
+                @else
+                <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
+                @if (Route::has('register'))
+                <a href="{{ route('register') }}"
+                    class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                @endif
+                @endauth
+            </div>
             @endif
         </div>
     </div>

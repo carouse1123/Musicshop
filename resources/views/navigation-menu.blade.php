@@ -28,7 +28,7 @@
                     </x-jet-nav-link>
 
                     <x-jet-nav-link href="" :active="request()->routeIs('')">
-                        {{ __('จำลองคีย์บอร์ด') }}
+                        {{ __('จำลองเครื่องดนตรี') }}
                     </x-jet-nav-link>
 
                     <x-jet-nav-link href="" :active="request()->routeIs('')">

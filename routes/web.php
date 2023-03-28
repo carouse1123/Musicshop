@@ -23,6 +23,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     //ตะกร้าสินค้า
     Route::get('/cart', [CartController::class, 'cart'])->name('cart');
     Route::post('/cartstore', [CartController::class, 'store'])->name('cartstore');
+    Route::get('/deletecart/{id}', [CartController::class, 'delete_cart'])->name('delete_cart');
 });
 
 Route::prefix('admin')->middleware('auth', 'isAdmin')->group(function () {

@@ -16,7 +16,7 @@
                     <div class="card-body" id="detailproduct">
                         <h3 class="card-text nameproduct">{{$item->product_name}}</h3>
                         <p class="card-text priceproduct">&#x0E3F;{{$item->price}}</p>
-                        <a class='bx bx-trash' href=""></a>
+                        <a class='bx bx-trash' href="{{url('/deletecart/'.$item->id)}}"></a>
                     </div>
                 </div>
                 @endforeach
@@ -45,7 +45,7 @@
                             <p id="summaryprice">&#x0E3F;{{number_format($total, 2)}}</p>
                         </div>
                         <br>
-                        <a href="#" id="btnsubmit">ทำการสั่งซื้อ</a>
+                        <a href="" id="btnsubmit">ทำการสั่งซื้อ</a>
                     </div>
                 </div>
             </div>
