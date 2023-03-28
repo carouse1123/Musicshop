@@ -69,7 +69,7 @@
     <div class="ml-3 relative">
         <span class="inline-flex rounded-md" width="48">
             <button type="button" class="inline-flex items-center">
-                <a class='bx bx-cart-alt' href=""></a>
+                <a class='bx bx-cart-alt' href="{{URL('/cart')}}"></a>
             </button>
         </span>
     </div>

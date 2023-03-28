@@ -19,8 +19,14 @@
                                 <div class="product-price">&#x0E3F;{{number_format($product->product_price, 2)}}
                                 </div>
                                 <div class="product-links">
-                                    <a href="" id="whislist"><i class="fa fa-heart"></i></a>
-                                    <a href="" id="cart"><i class="fa fa-shopping-cart"></i></a>
+                                    <form action="{{URL('/cartstore')}}" method="post" enctype="multipart/form-data">
+                                        @csrf
+                                        <a href="" id="whislist"><i class="fa fa-heart"></i></a>
+                                        <input type="hidden" name="product_id" value="{{$product->id}}">
+                                        <button type="submit">
+                                            <a href="{{URL('/cart')}}" id="cart"><i class="fa fa-shopping-cart"></i></a>
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>

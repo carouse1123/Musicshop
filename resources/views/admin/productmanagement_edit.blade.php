@@ -22,7 +22,8 @@
                 <h3 id="addtitle">เพิ่มสินค้า</h3>
             </div>
             <div id="manage_border" class="card-body">
-                <form action="{{route('product_add')}}" method="post" enctype="multipart/form-data" id="manageform">
+                <form action="{{URL('admin/updateproduct/'.$product->id)}}" method="post" enctype="multipart/form-data"
+                    id="manageform">
                     {{ csrf_field() }}
                     @method('PUT')
                     <div class="form-group mb-3" id="add">

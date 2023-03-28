@@ -7,7 +7,8 @@
             <div class="container flex">
                 <div class="left">
                     <div class="main_image">
-                        <img src="{{ asset('images_product/'.$product->product_image->first()->name) }}" alt="{{$product->product_image->first()->name}}" class="card-img-top" id="imageproduct">
+                        <img src="{{ asset('images_product/'.$product->product_image->first()->name) }}"
+                            alt="{{$product->product_image->first()->name}}" class="card-img-top" id="imageproduct">
                     </div>
                 </div>
                 <div class="right">
@@ -21,9 +22,12 @@
                         <span>+</span>
                     </div>
                     <div id="btn">
-                        <form action="{{route('product_add')}}" method="post" enctype="multipart/form-data">
+                        <form action="{{URL('/cartstore')}}" method="post" enctype="multipart/form-data">
                             @csrf
-                            <button id="addtocart" type="submit">เพิ่มสินค้าลงในตะกร้า</button>
+                            <input type="hidden" name="product_id" value="{{$product->id}}">
+                            <button type="submit">
+                                <a id="addtocart"> เพิ่มสินค้าลงในตะกร้า</a>
+                            </button>
                             <a id="chat">ติดต่อร้าน</a>
                         </form>
                     </div>
@@ -38,18 +42,18 @@
             </div>
 
             <script>
-                (document).ready(function() {
-                    ('.increment-btn').click(function(e) {
-                        e.preventDefault();
+            (document).ready(function() {
+                ('.increment-btn').click(function(e) {
+                    e.preventDefault();
 
-                        var inc_value = $('.qty-input').val();
-                        var value = parseInt(inc_value, 10);
-                        value = isNaN(value) ? 0 : value;
-                        if (value < 10) {
-                            value++;
-                            $('.qty-input').val(value);
-                        }
-                    });
+                    var inc_value = $('.qty-input').val();
+                    var value = parseInt(inc_value, 10);
+                    value = isNaN(value) ? 0 : value;
+                    if (value < 10) {
+                        value++;
+                        $('.qty-input').val(value);
+                    }
                 });
+            });
             </script>
 </x-guest-layout>

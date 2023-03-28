@@ -9,7 +9,7 @@
 #productcart {
     height: 120px;
     background-color: white;
-    border-radius: 15px;
+    border-radius: 5px;
     display: flex;
     margin: 10px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 3px 15px;
@@ -18,12 +18,15 @@
 #cartsubmit{
     width: 10%;
     background-color: white;
-    border-radius: 15px;
+    border-radius: 5px;
     padding: 20px;
     margin: 10px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 3px 15px;
     display: flex;
     flex-direction: column;
+}
+#summaryprice{
+    color: red;
 }
 #cartsum{
     display: flex;
@@ -40,6 +43,7 @@
 #sumprice{
     display: flex;
     justify-content: space-between;
+    font-weight: bold;
 }
 #detailproduct{
     padding: 10px;
@@ -52,11 +56,20 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     justify-content: center;
 }
-
+#btnsubmit:hover{
+    color: white;
+    transition: 0.2s;
+}
+#name{
+    max-width: 70%;
+}
 .card-title{
     font-weight: bold;
 }
-
+hr{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 img {
-    border-radius: 15px;
+    border-radius: 5px;
 }

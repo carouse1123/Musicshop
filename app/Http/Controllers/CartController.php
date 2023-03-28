@@ -20,6 +20,7 @@ class CartController extends Controller
 
     function store(Request $request)
     {
+       
         $product = product::find($request->product_id);
         $cart = cart::where('user_id', Auth::id())->where('status', 0)->first();
         //ถ้ามีตะกร้าอยู่แล้ว
@@ -54,7 +55,6 @@ class CartController extends Controller
             $order_detail->amount = 1;
             $order_detail->save();
         }
-
         return redirect()->back();
     }
 }
